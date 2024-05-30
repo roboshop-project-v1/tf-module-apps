@@ -38,10 +38,10 @@ resource "aws_launch_template" "apps" {
   image_id      = data.aws_ami.ami
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.app.id]
-  user_data = filebase64(templatefile("${path.module}/userdata.sh"),
+  user_data = base64encode(templatefile("${path.module}/userdata.sh",
   {
     component=var.component
-  })
+  }))
 }
 
 resource "aws_autoscaling_group" "apps" {
