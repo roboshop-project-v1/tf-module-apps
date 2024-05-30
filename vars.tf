@@ -12,3 +12,5 @@ variable "max_size" {}
 variable "min_size" {}
 variable "alb_name" {}
 variable "zone_id" {}
+variable "listener" {}
+variable "priority" {}
