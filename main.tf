@@ -20,7 +20,7 @@ resource "aws_security_group_rule" "app" {
   from_port         = var.port
   to_port           = var.port
   protocol          = "tcp"
-  cidr_blocks       = var.app_subnets_cidr
+  cidr_blocks       = var.sg_ingress_cidr
   security_group_id = aws_security_group.app.id
 }
 
