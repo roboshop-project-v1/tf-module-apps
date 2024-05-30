@@ -60,7 +60,7 @@ resource "aws_autoscaling_group" "apps" {
 resource "aws_route53_record" "apps" {
   zone_id = var.zone_id
   name    = "${var.component}-${var.env}"
-  type    = "A"
+  type    = "CNAME"
   ttl     = 30
   records = [var.alb_name]
 }
