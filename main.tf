@@ -62,7 +62,7 @@ resource "aws_route53_record" "apps" {
   name    = "${var.component}-${var.env}"
   type    = "A"
   ttl     = 30
-  records = var.alb_name
+  records = [var.alb_name]
 }
 
 resource "aws_lb_target_group" "apps" {
