@@ -35,7 +35,7 @@ resource "aws_vpc_security_group_egress_rule" "rabbitmq" {
 
 resource "aws_launch_template" "apps" {
   name_prefix   = "${local.name_prefix}"
-  image_id      = data.aws_ami.ami
+  image_id      = data.aws_ami.ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.app.id]
   user_data = base64encode(templatefile("${path.module}/userdata.sh",
