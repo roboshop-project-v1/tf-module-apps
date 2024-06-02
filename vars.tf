@@ -10,7 +10,10 @@ variable "instance_type" {}
 variable "desired_capacity" {}
 variable "max_size" {}
 variable "min_size" {}
-variable "alb_name" {}
+variable "public_alb_name" {}
+variable "private_alb_name" {}
 variable "zone_id" {}
-variable "listener" {}
+variable "public_listener" {}
+variable "private_listener" {}
 variable "priority" {}
+variable "default_vpc_id" {}
