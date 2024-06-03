@@ -56,6 +56,13 @@ resource "aws_autoscaling_group" "apps" {
     id      = aws_launch_template.apps.id
     version = "$Latest"
   }
+
+  tag {
+      key                 = "Name"
+      value               = "${var.component}"
+      propagate_at_launch = true
+    }
+
 }
 
 resource "aws_route53_record" "apps" {
