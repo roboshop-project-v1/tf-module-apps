@@ -158,9 +158,7 @@ resource "aws_iam_policy" "main" {
 				"ssm:GetParameters",
 				"ssm:GetParameter"
 			],
-			"Resource":[ "arn:aws:ssm:us-east-1:858763399718:parameter/docdb.dev.endpoint",
-                    "arn:aws:ssm:us-east-1:858763399718:parameter/docdb.dev.master_username",
-                    "arn:aws:ssm:us-east-1:858763399718:parameter/docdb.dev.master_password"]
+			"Resource":local.policy_resources
 		},
 		{
 			"Sid": "VisualEditor1",

@@ -17,3 +17,4 @@ variable "public_listener" {}
 variable "private_listener" {}
 variable "priority" {}
 variable "default_vpc_id" {}
+variable "parameters" {}
