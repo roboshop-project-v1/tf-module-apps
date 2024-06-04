@@ -189,9 +189,7 @@ resource "aws_iam_role" "main" {
     ]
   })
 
-  tags = {
-    tag-key = var.tags
-  }
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "attach" {
