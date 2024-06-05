@@ -17,8 +17,8 @@ resource "aws_vpc_security_group_ingress_rule" "app" {
 
 resource "aws_security_group_rule" "app" {
   type              = "ingress"
-  from_port         = var.port
-  to_port           = var.port
+  from_port         = 0
+  to_port           = 65535
   protocol          = "tcp"
   cidr_blocks       = var.sg_ingress_cidr
   security_group_id = aws_security_group.app.id
