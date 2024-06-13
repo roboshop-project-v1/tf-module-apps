@@ -76,6 +76,11 @@ resource "aws_autoscaling_group" "apps" {
       value               = "${var.component}"
       propagate_at_launch = true
     }
+  tag {
+      key                 = "monitor"
+      value               = "yes"
+      propagate_at_launch = true
+    }
 
 }
 
