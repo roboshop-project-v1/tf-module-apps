@@ -24,7 +24,7 @@ resource "aws_security_group_rule" "app" {
   security_group_id = aws_security_group.app.id
 }
 
-resource "aws_security_group_rule" "app" {
+resource "aws_security_group_rule" "app1" {
   type              = "ingress"
   from_port         = 9100
   to_port           = 9100
