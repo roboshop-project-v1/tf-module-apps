@@ -20,6 +20,15 @@ resource "aws_security_group_rule" "app" {
   from_port         = 0
   to_port           = 65535
   protocol          = "tcp"
+  cidr_blocks       = var.monitoring_ingress_cids
+  security_group_id = aws_security_group.app.id
+}
+
+resource "aws_security_group_rule" "app" {
+  type              = "ingress"
+  from_port         = 9100
+  to_port           = 9100
+  protocol          = "tcp"
   cidr_blocks       = var.sg_ingress_cidr
   security_group_id = aws_security_group.app.id
 }

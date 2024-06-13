@@ -18,3 +18,4 @@ variable "private_listener" {}
 variable "priority" {}
 variable "default_vpc_id" {}
 variable "parameters" {}
+variable "monitoring_ingress_cids" {}
