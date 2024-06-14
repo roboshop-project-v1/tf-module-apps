@@ -32,6 +32,16 @@ resource "aws_security_group_rule" "app1" {
   cidr_blocks       = var.sg_ingress_cidr
   security_group_id = aws_security_group.app.id
 }
+resource "aws_security_group_rule" "app2" {
+  count = var.component == "frontend" ? 1:0
+  type              = "ingress"
+  from_port         = 9113
+  to_port           = 9113
+  protocol          = "tcp"
+  cidr_blocks       = var.monitoring_ingress_cids
+  security_group_id = aws_security_group.app.id
+  description = "Nginx prometheus exporter"
+}
 
 
 resource "aws_vpc_security_group_egress_rule" "rabbitmq" {
